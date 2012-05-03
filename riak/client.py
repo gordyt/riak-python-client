@@ -276,8 +276,7 @@ class RiakClient(object):
         """
         Get the decoding function for the provided content type.
         """
-        if content_type in self._decoders:
-            return self._decoders[content_type]
+        return self._decoders.get(content_type, None)
 
     def set_decoder(self, content_type, decoder):
         """
